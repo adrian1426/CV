@@ -1,0 +1,73 @@
+-----------------------------git-----------------------
+-3 estados:
+1.-working directory
+2.-staging area
+3.-repository
+
+--------------------------------------------------------
+1.-configuración.
+-decirle a git nuestro nombre o cambiar nombre
+: git config --global user.name "Adrian1426"
+-ver la configuracion de nombre
+: git config --global user.name
+-configurar correo
+: git config --global user.email "adrianhh1426@gmail.com"
+-configurar colores de ui git (opcional)
+: git config --global color.ui true
+-ver listado de configuraciones
+:git config --global --list
+2.-iniciar el proyecto y monitorear
+: git init
+3.-estado del proyecto
+: git status
+4.- agregar archivos (stage area)
+: git add , : git add -A (agrega todos)
+4.- commit (repository)
+: git commit -m "mensaje"
+5.- log
+: git log
+6.-viajar en el tiempo (ver como estaba el codigo antes)
+git checkout id_commit, git checkout master (regresa al último commit)
+7.-resetear o revert el commit, llegar  a un commit borrando todo ls que estaban posyterior a ese
+: git reset --soft (resetea pero no toca nuestro codigo o working dir),
+: git reset --mixed (solo borra el staging area y no el working area),
+: git reset --hard (borra todo, staging area y working area)
+8.-ayuda de git
+--------------,
+:git help , git hel comando
+---------------------------------Ramas y fusiones--------------------------
+Head: el commit donde nos encontramos
+ramas: ajustes , branch que no afecta a nuestra rama principal
+-mostrar ramas
+: git brach
+-crear rama
+: git branch nombre
+-movernos entre ramas
+: git checkout nombre_rama
+-fusionar ramas, posicionados en la rama que va a absorber
+: git merge develop(rama de prueba o desarrollo)
+-eliminar un branch
+: git branch -D nombre_branch
+-crear y movernos a una rama al mismo tiempo
+: git checkout -b nombre_rama
+-----------------------------------github----------------------------
+-clonar un proyecto
+: git clone
+-enlazar un proyecto local a remoto
+: git remote add origin url_remote
+-comprobar conexión remote
+: git remote -v
+-quitar enlace remoto
+: git remote remove origin
+-subir cambios o código a repositorio remoto
+git push origin nombre_branch (-f para forzar)
+-cambiar mensaje a un commit, último commit 
+: git commit --amend - "mensaje"
+-tag
+: git tag -a v0.1 -m "primera version estable"
+-asignar tag a un commit en especifico
+: git tag -a v0.1 -m "primera version estable" id_de_commit
+-subir tag a reporitorio remoto
+: git push origin nombre_tag
+-subir todo los tags
+: git push origin --tags
